@@ -5,7 +5,7 @@ function Footer() {
     return (
         <FooterBase className="col-12 text-center bg-dark">
             <div className="py-4">
-                <a href="https://pedromartins.dev" target="_blank">Pedro Martins</a>
+                <a href="https://pedromartins.dev" target="_blank" rel="noopener noreferrer">Pedro Martins</a>
                 <p>Baseado nos conteúdos da Imersão React Alura</p>
             </div>
         </FooterBase>
