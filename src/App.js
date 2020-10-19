@@ -2,12 +2,10 @@ import React from 'react';
 
 function App() {
   return (
-    <div>
-      <header>
-        <p>
-          Aulasflix em breve...
-        </p>
-      </header>
+    <div className="principal">
+      <p>
+        Aulasflix em breve...
+      </p>
     </div>
   );
 }
