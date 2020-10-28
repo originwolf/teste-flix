@@ -1,17 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Header from "./components/Header";
-import App from './App';
-// import Slider from './App';
-import Footer from "./components/Footer";
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import Home from "./pages/Home";
+import Categorias from "./pages/Categorias";
+import "./index.css";
+import { Redirect , Switch, Route, BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Header />
-    <App />
-    {/* <Slider /> */}
-    <Footer />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <BrowserRouter>
+    <Switch>
+      <Route path="/" component={Home} exact/>
+      <Route path="/categorias" component={Categorias}/>
+      <Route component={Home}></Route>
+    </Switch>
+  </BrowserRouter>,
+  document.getElementById("root")
 );
