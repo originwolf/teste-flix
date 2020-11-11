@@ -6,6 +6,21 @@ import './index.css'
 
 function CadastroCategoria() {
     const { register, handleSubmit, errors } = useForm();
+
+    function onSubmit(dados) {
+        fetch(`http://localhost:8081/categorias`, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(dados),
+        })
+        .then(function (response) {
+            return response.json();
+        })
+        .catch((error) => console.error("Error:", error))
+        .then((response) => console.log("Success:", JSON.stringify(response)))
+        }
         return (
             <div>
                 <Header />
@@ -16,7 +31,7 @@ function CadastroCategoria() {
                         </div>
                         
                         <div className="col-12 col-md-8 col-lg-6 offset-md-2 offset-lg-3 pb-5">
-                            <form onSubmit={handleSubmit()} className="form-group">
+                            <form onSubmit={handleSubmit(onSubmit)} className="form-group">
                                 <input type="text" className="form-control input" placeholder="Título" name="titulo" ref={register({required: true})} />
                                 <br />
                                 <input type="text" className="form-control input" placeholder="Descrição Extra" name="descricao" ref={register({required: true})} />
